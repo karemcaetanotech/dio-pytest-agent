@@ -1,7 +1,14 @@
 # dio-pytest-agent
-git init
-git branch -M main
-git add .
-git commit -m "chore: projeto agente pytest + instruções de uso"
-git remote add origin https://github.com/<seu-usuario>/dio-pytest-agent.git
-git push -u origin main
+# Agente que gera testes Pytest (LangChain + Azure OpenAI)
+
+Gera automaticamente `test_*.py` a partir de um arquivo Python.
+
+## Requisitos
+- Python 3.10+  
+- `pip install -r requirements.txt`
+- Criar `.env` com base em `.env.example`
+
+## Como rodar
+```bash
+python src/main.py --input samples/math_ops.py --out tests/test_math_ops.py --sys-path-dir samples
+pytest -q
